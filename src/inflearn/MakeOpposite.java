@@ -4,16 +4,30 @@ import java.util.Scanner;
 
 public class MakeOpposite {
     public String init(String s) {
-        StringBuilder sb = new StringBuilder();
+//      video solve - ascii & casting
+        String answer = "";
         for(char x : s.toCharArray()) {
-            if(Character.isLowerCase(x)) {
-                sb.append(Character.toUpperCase(x));
-            } else {
-                sb.append(Character.toLowerCase(x));
-            }
+            if(x>=65 && x<=90) answer += (char)(x+32);
+            else answer += (char)(x-32);
         }
+        return answer;
 
-        return sb.toString();
+//        My second solve -StringBuilder
+//        StringBuilder sb = new StringBuilder();
+//        for(char x : s.toCharArray()) {
+//            if(Character.isLowerCase(x)) {
+//                sb.append(Character.toUpperCase(x));
+//            } else {
+//                sb.append(Character.toLowerCase(x));
+//            }
+//        }
+//
+//        return sb.toString();
+
+
+
+//        My first solve
+
 //        int index = 0;
 //        String upCase = s.toUpperCase();
 //        String lowCase = s.toLowerCase();
