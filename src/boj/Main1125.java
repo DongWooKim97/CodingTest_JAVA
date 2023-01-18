@@ -1,4 +1,4 @@
-package boj.basic;
+package boj;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
