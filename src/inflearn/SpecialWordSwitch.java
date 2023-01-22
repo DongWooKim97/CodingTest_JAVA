@@ -2,31 +2,33 @@ package inflearn;
 
 import java.util.*;
 
-public class SpecialWordSwitch{
+public class SpecialWordSwitch {
 
     public String solution(String str) {
-        String answer;
-        int lt = 0;
-        int rt = str.length()-1;
-        char [] c = str.toCharArray();
-        while(lt<rt) {
-            if(!Character.isAlphabetic(c[lt])) lt++;
-            else if(!Character.isAlphabetic(c[rt])) rt--;
+        String result;
+        char[] s = str.toCharArray();
+        int lt = 0, rt = str.length() - 1;
+
+        while (lt < rt) {
+            if (!Character.isAlphabetic(s[lt])) lt++;
+            else if (!Character.isAlphabetic(s[rt])) rt--;
             else {
-                char tmp = c[lt];
-                c[lt] = c[rt];
-                c[rt] = tmp;
+                char tmp = s[lt];
+                s[lt] = s[rt];
+                s[rt] = tmp;
                 lt++;
                 rt--;
             }
         }
-        answer = String.valueOf(c);
-        return answer;
+
+        result = String.valueOf(s);
+        return result;
     }
-    public static void main(String [] args) {
-        SpecialWordSwitch s = new SpecialWordSwitch();
+    public static void main(String[] args) {
+        SpecialWordSwitch sw = new SpecialWordSwitch();
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        System.out.println(s.solution(str));
+        System.out.println(sw.solution(str));
+
     }
 }
