@@ -21,9 +21,12 @@ public class SortWords {
             }
         });
 
+//        Java8 // Stream사용 = Array -> Stream 객체 -> 다시 Array
+        String[] result = Arrays.stream(arr).distinct().toArray(String[]::new);
 
-        LinkedHashSet<String> lh = new LinkedHashSet<>(Arrays.asList(arr));
-        String[] result = lh.toArray(new String[0]);
+//        LinkedHashSet사용풀이
+//        LinkedHashSet<String> lh = new LinkedHashSet<>(Arrays.asList(arr));
+//        String[] result = lh.toArray(new String[0]);
 
         for (String s : result) {
             System.out.println(s);
